@@ -1,0 +1,24 @@
+# In Deployment file is combination of Pod, Replica and auto-scaling etc.
+# these functionality you add in a one file the name of this file is Deployment.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: django-deployment
+  labels:
+    app: django-project
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: django-project
+  template:
+    metadata:
+      labels:
+        app: django-project
+    spec:
+      containers:
+      - name: my-django-app
+        image: officialyuvi070/my-kube-app
+        ports:
+        - containerPort: 8000

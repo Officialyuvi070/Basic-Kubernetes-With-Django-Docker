@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata: # it just the information like the name of Pod is my pod
+  name: my-pod
+  labels: # label is attribute in which just enter like tags.
+    owner: Yuvraj
+spec:
+  containers:
+  - name: my-kube-app # here enter name (any)
+    image: officialyuvi070/my-kube-app # here enter pulling command which image is pushing in docker hub
+    ports:
+    - containerPort: 8000  # Here enter the expose port for eg. django 8000

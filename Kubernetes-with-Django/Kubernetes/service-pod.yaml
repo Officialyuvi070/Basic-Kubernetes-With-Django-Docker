@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata: # it just the information like the name of Service is my service
+  name: my-service-pod
+spec:
+  selector: # In selector enter the tags which have entered under lable (tag)
+    owner: Yuvraj
+  ports:
+    - protocol: TCP
+      port: 80 # for the internet access
+      targetPort: 8000 # which is target port means expose port like for django 8000
+  type: NodePort # in a service there 3 type (NodePort (30000 to 32000), ClusterIP and Load-Balancer it provide the DNS)
